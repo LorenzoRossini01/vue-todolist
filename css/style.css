@@ -1,0 +1,35 @@
+header {
+  min-height: 220px;
+}
+
+main {
+  background-image: url("https://i.pinimg.com/564x/01/b5/78/01b578be9f5e7bd29c4fa01709eb8fd6.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh - 220px);
+}
+main .container {
+  background-color: antiquewhite;
+  height: 500px;
+  border-radius: 10px;
+}
+
+.task {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.task:hover {
+  background-color: rgb(243, 243, 243);
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.task i {
+  cursor: pointer;
+  display: inline-block;
+}
