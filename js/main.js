@@ -4,8 +4,20 @@ createApp({
   data() {
     return {
       title: "Todo List",
+      tasks: [
+        { name: "task", done: false },
+        { name: "task", done: false },
+        { name: "task", done: false },
+        { name: "task", done: false },
+        { name: "task", done: false },
+        { name: "task", done: false },
+      ],
     };
   },
 
-  methods: {},
+  methods: {
+    getTaskDone(task) {
+      task.done = !task.done;
+    },
+  },
 }).mount("#app");
