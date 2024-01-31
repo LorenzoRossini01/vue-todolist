@@ -32,14 +32,30 @@
       <header class="bg-dark py-3 text-white">
         <div class="container">
           <h1>{{title}}</h1>
-          <form>
+          <div>
             <label for="add-task">Aggiungi una task</label>
-            <input type="text" id="add-task" class="form-control my-2" />
-            <button class="btn btn-warning">
+            <input
+              type="text"
+              id="add-task"
+              class="form-control my-2"
+              v-model="newTask.name"
+              @keyup.enter="addNewTask()"
+            />
+
+            <div
+              class="alert my-3"
+              :class="message.class"
+              v-show="message.show"
+            >
+              <i class="fa-solid me-2" :class="message.icon"></i>
+              <span>{{message.text}}</span>
+            </div>
+
+            <button class="btn btn-warning" @click="addNewTask()">
               <i class="fa-solid fa-save me-2"></i>
               Add Task
             </button>
-          </form>
+          </div>
         </div>
       </header>
       <main class="py-3">
@@ -53,13 +69,16 @@
           <ul class="p-0">
             <li
               class="task p-3 mb-3 h4"
-              v-for="task in tasks"
+              v-for="(task,index) in tasks"
               :class="task.done? 'text-decoration-line-through':''"
               @click="getTaskDone(task)"
             >
-              Task1
+              {{task.name}}
               <span class="actions">
-                <i class="fa-solid fa-xmark text-danger p-2"></i>
+                <i
+                  class="fa-solid fa-xmark text-danger p-2"
+                  @click="deleteTask(index)"
+                ></i>
               </span>
             </li>
           </ul>
