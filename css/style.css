@@ -4,10 +4,10 @@
 
 main {
   background-image: url("https://i.pinimg.com/564x/01/b5/78/01b578be9f5e7bd29c4fa01709eb8fd6.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
-  height: calc(100vh - 220px);
+  min-height: calc(100vh - 220px);
 }
 main .container {
   background-color: antiquewhite;
